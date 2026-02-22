@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            coin flip game
+        </title>
+    </head>
+    <body>
+        <button onclick="
+                result('head');
+           ">head</button>
+        <button onclick="
+                result('tails');
+            ">tails</button>
+
+        <script>
+            function pickComputerMove(){
+                const pickNumber = Math.random();
+
+                let computerMove = '';
+                if(pickNumber <= (1/2) && pickNumber > 0){
+                    computerMove = 'head'
+                }else{
+                    computerMove = 'tails'
+                }
+                console.log(pickNumber);
+            console.log(computerMove);
+                return computerMove;
+            
+            }
+
+
+            function result(move){
+                console.log(move);
+
+               computerMove = pickComputerMove();
+            let result = '';
+
+                if(move === 'head'){
+                    if(computerMove === 'head'){
+                        result = 'you win'
+                    }else if(computerMove === 'tails'){
+                        result = 'you lose'
+                    }}else if(move === 'tails'){
+                        if(computerMove === 'tails'){
+                            result = 'you win'
+                        }else{
+                            result = 'you lose'
+                        }
+           }
+                console.log(result);
+                alert(`you chose ${move}, computer chose ${computerMove}, ${result}`);
+            }
+        </script>
+    </body>
+</html>
